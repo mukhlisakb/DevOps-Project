@@ -1,0 +1,15 @@
+---
+- hosts: nginx
+  tasks:
+    - name: Create a directory
+      file:
+        path: /okeee
+        state: directory
+        mode: '0755'
+
+    - name: Copy files to the directory
+      copy:
+        src: /file
+        dest: /okeee/file
+        remote_src: yes
+        mode: '0644'

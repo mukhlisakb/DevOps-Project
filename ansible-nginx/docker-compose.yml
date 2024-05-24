@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nginx1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nginx1
+    tty: true
+
+  nginx2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nginx2
+    tty: true

@@ -1,0 +1,8 @@
+---
+- hosts: nginx
+  tasks:
+    - name: Copy files to the directory
+      copy:
+        src: /opt/skoladigital/ansible-nginx/fileku
+        dest: /okeee/fileku
+        mode: '0644'

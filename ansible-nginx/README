@@ -1,0 +1,4 @@
+docker-compose up -d : menjalankan docker compose yang kita bikin
+
+contoh menjalakanya : 
+ansible-playbook -i hosts.ini install_nginx.yml

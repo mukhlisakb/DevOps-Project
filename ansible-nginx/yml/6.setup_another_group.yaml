@@ -1,0 +1,16 @@
+---
+- hosts: group1
+  tasks:
+    - name: Create a directory
+      file:
+        path: /directorygroup1
+        state: directory
+        mode: '0755'
+
+- hosts: group2
+  tasks:
+    - name: Create a directory
+      file:
+        path: /directorygroup2
+        state: directory
+        mode: '0755'
