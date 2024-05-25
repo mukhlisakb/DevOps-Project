@@ -1,0 +1,49 @@
+#######
+Build docker compose menggunakan volume dan network
+#######
+mkdir compose -> create folder
+cd compose 
+nano docker-compose.yml -> membuat docker compose
+nano nginx.conf -> membuat nginx config untuk nginx
+echo "<h1>Hello, World</h1>" > html/index.html -> contoh html untuk tampilan nginx
+docker-compose up -d	-> start docker compose
+docker-compose down -> stop docker compose
+docker-compose down -v -> stop docker compose dengan menghapus volume
+
+#######
+example create docker with volume
+#######
+
+docker volume create mysql_data -> create volume
+create docker dengan attach volume yang sudah kita buat :
+docker run -d \
+  --name mysql \
+  -e MYSQL_ROOT_PASSWORD=root_password \
+  -e MYSQL_DATABASE=my_database \
+  -e MYSQL_USER=my_user \
+  -e MYSQL_PASSWORD=my_password \
+  -v mysql_data:/var/lib/mysql \
+  mysql:latest
+
+#######
+example create docker with network
+#######
+create network :
+docker network create my_network
+
+create docker menggunakan network yang sudah kita create
+docker run -d \
+  --name mysql \
+  --network my_network \
+  -e MYSQL_ROOT_PASSWORD=root_password \
+  -e MYSQL_DATABASE=my_database \
+  -e MYSQL_USER=my_user \
+  -e MYSQL_PASSWORD=my_password \
+  mysql:latest
+
+
+docker run -d \
+  --name nginx \
+  --network my_network \
+  -p 8080:80 \
+  nginx:latest
