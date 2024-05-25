@@ -1,4 +1,4 @@
-# Belajar Docker untuk Pemula - Membuat TODO App
+# Belajar Docker untuk Pemula - Membuat TODO App : Task DigitalSkola
 
 TODO app ini adalah contoh app untuk mendemokan proses membuat aplikasi dengan Docker, terdiri dari:
 - Frontend dengan [Vue JS framework](https://docs.vuejs.id/v2/guide/)
